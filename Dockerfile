@@ -10,7 +10,7 @@ echo deb http://repos.mesosphere.io/ubuntu trusty main > /etc/apt/sources.list.d
 apt-get update && \
 apt-get -y install mesos
 
-RUN echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /etc/apt/sources.list.d/docker.list && \
+RUN echo deb https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/sources.list.d/docker.list && \
 apt-get update && \
 apt-get install docker-engine
 

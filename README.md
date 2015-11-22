@@ -8,9 +8,10 @@ docker run -d \
 -e MESOS_CONTAINERIZERS=docker,mesos \
 -e MESOS_EXECUTOR_REGISTRATION_TIMEOUT=5mins \
 -e MESOS_LOG_DIR=/var/log \
+-e MESOS_docker_mesos_image=<DOCKER_SLAVE_IMAGE> \
 [-e MESOS_attributes="<key>:<value>;<key>:<value>"] \
 -v /sys/fs/cgroup:/sys/fs/cgroup \
 -v /var/run/docker.sock:/var/run/docker.sock \
---name slave --net host --privileged --restart always \
-mesos-slave-dev
+--name slave --net host --privileged --pid host --restart always \
+<DOCKER_SLAVE_IMAGE>
 </pre>

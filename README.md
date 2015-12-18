@@ -12,6 +12,7 @@ docker run -d \
 [-e MESOS_attributes="key1:value1;key2:value2;..."] \
 -v /sys/fs/cgroup:/sys/fs/cgroup \
 -v /var/run/docker.sock:/var/run/docker.sock \
+-v /tmp/mesos:/tmp/mesos \
 --name slave --net host --privileged --pid host --restart always \
 $DOCKER_SLAVE_IMAGE
 </pre>
